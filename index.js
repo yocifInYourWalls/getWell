@@ -48,6 +48,13 @@ function rotateText() {
 }
 window.onload = rotateText();
 
-window.onload = function() {
-    document.querySelector("audio").play();
-}
+
+let audio = document.querySelector("audio"); 
+window.onload = audio.play();
+
+let btn = document.querySelector("button");
+btn.addEventListener("click", e => {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
+})
